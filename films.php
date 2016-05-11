@@ -23,10 +23,8 @@
        }
       
       ?>
-        </select>
-       
-        
-        
+        </select>        
+        <input type="submit" name="chercher" values="chercher"/>
       </form>
       
       
