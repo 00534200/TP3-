@@ -12,7 +12,24 @@
       <p>
         ----------------------------------------------------------------------------------------------------
       </p>
-     
+    
+      <form>
+        <select>
+           <?php
+      $conn=mysqli_connect("sql7.freemysqlhosting.net","sql7118747","xXGqKMPhbi","sql7118747");
+      $result = mysqli_query($conn,"SELECT distinct nom From  Artiste ");
+       while($artiste=mysqli_fetch_assoc($result)){
+       echo"<OPTION>".$artiste['nom'];
+       }
+      
+      ?>
+        </select>
+       
+        
+        
+      </form>
+      
+      
       
       <?php
       $link=mysqli_connect("sql7.freemysqlhosting.net","sql7118747","xXGqKMPhbi","sql7118747");
