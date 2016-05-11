@@ -17,7 +17,7 @@
         <select>
            <?php
       $conn=mysqli_connect("sql7.freemysqlhosting.net","sql7118747","xXGqKMPhbi","sql7118747");
-      $result = mysqli_query($conn,"SELECT distinct nom From  Artiste ");
+      $result = mysqli_query($conn,"SELECT distinct nom From  Artiste "); // la requete est mauvaise, une des requetes qui marche est "Select distinct nom From Film Join Artiste On(idMes=idArtiste)" 
        while($artiste=mysqli_fetch_assoc($result)){
        echo"<OPTION>".$artiste['nom']; //il manque un "</option>"
        }
@@ -30,7 +30,7 @@
       
       
       <?php
-      $link=mysqli_connect("sql7.freemysqlhosting.net","sql7118747","xXGqKMPhbi","sql7118747");
+      $link=mysqli_connect("sql7.freemysqlhosting.net","sql7118747","xXGqKMPhbi","sql7118747");// tu n'a pas besoin de cette ligne car tu n'a pas close ton link
 if(!$link){
   die("<p>connexion impossible</p>");
 }
@@ -62,3 +62,4 @@ if($result){
       
     </body>
 </html>
+  // 10/20 
