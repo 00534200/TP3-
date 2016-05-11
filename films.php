@@ -1,11 +1,48 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8" />
-        <title>Titre</title>
+        <meta charset="latin1" />
+        <title>Films</title>
     </head>
 
     <body>
+    <h1>
+      Films 
+      </h1>
+      <p>
+        ----------------------------------------------------------------------------------------------------
+      </p>
+     
+      
+      <?php
+      $link=mysqli_connect("sql7.freemysqlhosting.net","sql7118747","xXGqKMPhbi","sql7118747");
+if(!$link){
+  die("<p>connexion impossible</p>");
+}
+      
+$result = mysqli_query($link,"SELECT titre,annee,genre,nom FROM Film , Artiste where Artiste.idArtiste=Film.idMes");
     
+if($result){
+  echo "<table>";
+  echo "<tr>";
+    echo "<th>titre</th>";
+     echo"<th>annee</th>";
+     echo"<th>genre</th>";
+     echo"<th>nom</th>";
+    echo "</tr>";
+  while($film=mysqli_fetch_assoc($result)){
+    echo "<tr>";
+  echo "<td>".$film['titre']."</td>";
+  echo"<td>".$film['annee']."</td>";
+  echo "<td>".$film['genre']."</td>";
+    echo"<td>".$film['nom']."</td>";
+    echo "</tr>";
+  }
+ echo "</table>";
+} else
+die("<p>Erreur dans l'éxécution de la requête.</p>");
+     
+    ?>  
+      
     </body>
 </html>
