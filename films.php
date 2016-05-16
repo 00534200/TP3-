@@ -17,22 +17,7 @@
     
       <form>
        <select>
-				 
-        <?php
-        $conn=mysqli_connect("sql7.freemysqlhosting.net","sql7118747","xXGqKMPhbi","sql7118747");
-        $resultat=mysqli_query($conn,"SELECT DISTINCT nom FROM Film f JOIN Artiste a ON f.idMes = a.idArtiste");
-         if($resultat){
-          echo "<Option>Tous";
-           while($film=mysqli_fetch_assoc($resultat)){
-	         echo "<Option>".$film['nom'];
-           }
-        }
-        else{
-         die("<p>Erreur dans l'éxécution de la requête. </p>");
-        }
-       mysqli_close($conn);
-      ?>
-				 
+		
         </select>        
          <input type="submit" name="chercher" values="chercher"/>
           </form>
