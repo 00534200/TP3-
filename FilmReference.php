@@ -15,7 +15,7 @@
         ----------------------------------------------------------------------------------------------------
      </p>
     
-      
+     
            <table>
           	<thead>
              <tr>
@@ -35,13 +35,15 @@
       
       $result = mysqli_query($link,"SELECT titre,annee,genre,nom FROM Film , Artiste where Artiste.idArtiste=Film.idMes");
        if ($result){
+         $i = 1; 
         while($film=mysqli_fetch_assoc($result)){
          echo "<tr>";
-         echo "<td>".$film['titre']."</td>";
+         echo "<td><a href=\"./com.php?film=$i\">".$film['titre']."</a></td>";
          echo"<td>".$film['annee']."</td>";
          echo "<td>".$film['genre']."</td>";
          echo"<td>".$film['nom']."</td>";
          echo "</tr>";
+          $i = $i+1;
 			 } 
      }  
       else
@@ -53,6 +55,11 @@
       </table>
     </body>
 </html>
+
+
+
+
+
 
 
 
